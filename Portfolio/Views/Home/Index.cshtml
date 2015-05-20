@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Portfolio.Models.Sites>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<header>
+    <h1>Hej, mitt namn är Peter Sall.</h1>
+    <h1>Jag gör webbsidor, och jag tror det är därför</h1>
+    <h1>jag kallas för Webbutvecklare.</h1>
+    <span class="comment">:)</span>
+</header>
+
+@foreach (var item in Model)
+{
+    <div id="@Html.DisplayFor(modelItem => item.id)" class="site" onmouseover="showSiteHrefTarget(this);" onmouseout="showSiteTitle(this);">
+        <a href="@Html.DisplayFor(modelItem => item.a_href)" target="_blank">
+            <img src="../Content/Images/sites/@Html.DisplayFor(modelItem => item.img_src)" alt=" " title=" " />
+            <h2 id="title-@Html.DisplayFor(modelItem => item.id)" class="title">@Html.DisplayFor(modelItem => item.title)</h2>
+            <h2 id="href-target-@Html.DisplayFor(modelItem => item.id)" class="href-target">@Html.DisplayFor(modelItem => item.a_href_target)</h2>
+        </a>
+    </div>
+}

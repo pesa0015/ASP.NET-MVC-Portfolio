@@ -1,0 +1,66 @@
+﻿@model Portfolio.Models.Sites
+
+@Html.Partial("~/Views/Shared/CheckUser.cshtml", Model)
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Äntligen, dags att lägga till en ny sida <span class="comment">:)</span></h2>
+
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.title)
+                @Html.ValidationMessageFor(model => model.title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.img_src, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.img_src)
+                @Html.ValidationMessageFor(model => model.img_src)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.a_href, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.a_href)
+                @Html.ValidationMessageFor(model => model.a_href)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.a_href_target, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.a_href_target)
+                @Html.ValidationMessageFor(model => model.a_href_target)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lägg till" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

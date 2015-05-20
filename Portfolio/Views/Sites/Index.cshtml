@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Portfolio.Models.Sites>
+
+@Html.Partial("~/Views/Shared/CheckUser.cshtml", Model)
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.img_src)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a_href)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.a_href_target)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.img_src)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a_href)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.a_href_target)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,199 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    width: 800px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+body {
+    font-family: 'Nunito-Regular', Arial;
+    background: #2b3e50;
+    color: #ebebeb;
+    width: 700px;
+    margin: 0px auto;
+}
+header {
+    margin-top: 150px;
+}
+header, nav, #message-sent, #contact div {
+    text-align: center;
+}
+.comment {
+    font-size: 1.5em;
+}
+nav {
+    margin-bottom: 50px;
+}
+nav ul {
+    font-family: 'Lato';
+    font-size: 1.5em;
+}
+nav ul, .ul-content {
+    list-style: none;
+    padding: 0px;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li {
+    transition: 0.1s;
+}
+nav ul li:hover {
+    cursor: pointer;
+    color: #4e5d6c;
+}
+#content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#contact {
+    width: 300px;
+    margin: auto;
+}
+input {
+width: 280px;
+margin-top: 5px;
+padding: 10px;
+outline:none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid silver;
+}
+textarea {
+width: 280px;
+margin-top: 5px;
+padding: 10px;
+outline: none;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid silver;
+}
+#submit {
+background-color: transparent;
+color: white;
+width: auto;
+}
+#submit:hover {
+background-color: #ebebeb;
+border-color: #2b3e50;
+color: #2b3e50;
+}
+.site {
+    width: 335px;
+    margin: 0px 10px 10px 0px;
+    display: inline-block;
+    /*border-bottom: 1px solid silver;*/
+    transition: 0.1s;
+}
+.site > a {
+    color: inherit;
+    text-decoration: none;
+}
+.site:hover {
+    cursor: pointer;
+    /*opacity: 0.5;*/
+    border-bottom: 1px solid #FFFFFF;
+}
+.href-target {
+    display: none;
+}
+img {
+    width: 100%;
+    height: 150px;
+    transition: 1s;
+}
+.mobile {
+    display: none;
+}
+
+@media only screen 
+and (max-width : 1224px) and (min-width : 701px) {
+    
+        input, textarea {
+           width: 280px;
+        }  
+    
+}
+    
+@media only screen 
+and (max-width : 700px) {
+        
+        body {
+            font-family: 'Nunito-Bold', Arial;
+            width: 90%;
+        }
+        h1 {
+            font-size: 19px;
+        }
+        header {
+            margin-top: 100px;
+        }
+        nav ul li {
+            font-size: 15px;
+            clear: both;
+        }
+        #contact {
+            width: 280px;
+        }
+        input, textarea {
+           width: 260px;
+        }
+        .site {
+            width: 90%;
+            border-bottom: 1px solid silver;
+            display: block;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+    
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato-light.ttf);
+}
+
+@font-face {
+    font-family: 'Nunito-Regular';
+    src: url(../fonts/Nunito-Regular.ttf);
+}
+
+.validation-summary-valid {
+    display: none;
+}
