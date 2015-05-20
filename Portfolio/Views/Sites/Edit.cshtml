@@ -9,7 +9,7 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Sites", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -30,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.img_src, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(u => u.img_src, new { @readonly = "readonly", @Name = "" })
+                @* Html.TextBoxFor(u => u.img_src, new { @readonly = "readonly", @Name = "" }) *@
                 @Html.TextBoxFor(m => m.img_src, new { type = "file" })
                 @Html.ValidationMessageFor(model => model.img_src)
             </div>

@@ -58,7 +58,7 @@ namespace Portfolio.Controllers
                     var filePath = Path.Combine(Server.MapPath("~/Content/Images/Sites"), fileName);
 
                     img_src.SaveAs(filePath);
-                        path = String.Format("/Content/Images/Sites/{0}", fileName);
+                        path = String.Format("{0}", fileName);
                         sites.img_src = path;
                         db.Sites.Add(sites);
                         db.SaveChanges();
@@ -103,7 +103,7 @@ namespace Portfolio.Controllers
                     var filePath = Path.Combine(Server.MapPath("~/Content/Images/Sites"), fileName);
 
                     img_src.SaveAs(filePath);
-                    path = String.Format("/Content/Images/Sites/{0}", fileName);
+                    path = String.Format("{0}", fileName);
                     sites.img_src = path;
                     db.Sites.Add(sites);
                     db.Entry(sites).State = EntityState.Modified;
