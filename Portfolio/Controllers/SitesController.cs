@@ -47,11 +47,11 @@ namespace Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,title,img_src,a_href,a_href_target")] Sites sites)
+        public ActionResult Create([Bind(Include = "id,title,img_src,a_href,a_href_target")] Sites sites, HttpPostedFileBase img_src)
         {
             if (ModelState.IsValid)
             {
-                /*var path = String.Empty;
+                var path = String.Empty;
                 if (img_src != null || img_src.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(img_src.FileName);
@@ -59,17 +59,17 @@ namespace Portfolio.Controllers
 
                     img_src.SaveAs(filePath);
                         path = String.Format("/Content/Images/Sites/{0}", fileName);
-                        sites.img_src = path;*/
+                        sites.img_src = path;
                         db.Sites.Add(sites);
                         db.SaveChanges();
-                        return Index();
+                        return View();
                     
 
-                //}
+                }
                 
             }
 
-            return View(sites);
+            return View();
         }
 
         // GET: /Sites/Edit/5

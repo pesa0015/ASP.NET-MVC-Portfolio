@@ -9,7 +9,7 @@
 <h2>Äntligen, dags att lägga till en ny sida <span class="comment">:)</span></h2>
 
 
-@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Sites", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.img_src, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.img_src)
+                @Html.TextBoxFor(model => model.img_src, new { @type = "file" })
                 @Html.ValidationMessageFor(model => model.img_src)
             </div>
         </div>
