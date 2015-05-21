@@ -15,9 +15,9 @@ namespace Portfolio.Models
         [Required]
         public string img_src { get; set; }
         [Required]
-        public string a_href { get; set; }
+        public string a_href { get; set; }                  // a_href = fullständig url, t.ex. http://www.example.com/
         [Required]
-        public string a_href_target { get; set; }
+        public string a_href_target { get; set; }           // a_href_target = användarvänlig url, t.ex. example.com
     }
 
     public class SitesDBContext : DbContext

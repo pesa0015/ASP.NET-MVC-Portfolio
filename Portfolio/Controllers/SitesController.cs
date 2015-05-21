@@ -62,7 +62,7 @@ namespace Portfolio.Controllers
                         sites.img_src = path;
                         db.Sites.Add(sites);
                         db.SaveChanges();
-                        return View();
+                        return RedirectToAction("Index");
                     
 
                 }
